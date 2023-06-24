@@ -1,0 +1,6 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
