@@ -55,6 +55,7 @@ so you can leave everything open, that is not bound to the other gpu.
 - I havent figured out vulkan yet.
 - I guess you could bind the script to libvirt hooks
 - Also test if games rendered on NVIDIA dont get copied NVIDIA->AMD->NVIDIA, so that they stay on the gpu and get displayed.
+- Sometimes /usr/lib/org_kde_powerdevil binds to an I2C-Bus of the Card (Namely Monitor IO), thereby preventing driver unload (frustrating because lsof /dev/nvidia0 and nvidia-smi is empty, but nvidia still says 1 usage). Either kill it, or unbind from i2c somehow. Restart it afterwards with kstart5 /usr/lib/org_kde_powerdevil
 
 ## OpenGL stuff
 - OpenGL needs to have [PRIME](https://wiki.archlinux.org/title/PRIME#Configure_applications_to_render_using_GPU) to be enabled, to render on NVIDIA gpu, else it will stay on amd
