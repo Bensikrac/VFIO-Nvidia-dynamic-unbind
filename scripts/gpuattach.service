@@ -1,0 +1,10 @@
+#place this in /etc/systemd/system/
+[Unit]
+Description=Attach GPU after boot
+[Service]
+Type=simple
+User=root
+RemainAfterExit=true
+ExecStart=$HOME/configs/scripts/gpuscript/firstbootattach.sh
+[Install]
+WantedBy=multi-user.target
