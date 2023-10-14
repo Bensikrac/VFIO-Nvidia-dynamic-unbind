@@ -60,7 +60,7 @@ so you can leave everything open, that is not bound to the other gpu.
 - If you don't want stuff binding to /dev/nvidia0, you can set the __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json envvar in /etc/environment aswell, to exclude the nvidia EGL files, since it bypasses KWIN [Study this image carefully](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Wayland_display_server_protocol.svg/1024px-Wayland_display_server_protocol.svg.png). Just don't forget setting it to the nvidia file, in case of games. 
 - You might need to include VBIOS in libvirt. Dumping on linux was broken, so I pulled the image using GPU-Z. If you do that, you need to remove the nvflash header: https://www.youtube.com/watch?v=FWn6OCWl63o
 - Sometimes SDDM will flash rapidly, then just unbind & rebind again, and it should be fixed
-- I havent figured out vulkan yet.
+- Vulkan should work aswell, since vulkan envvar is set.
 - I guess you could bind the script to libvirt hooks
 - Also test if games rendered on NVIDIA dont get copied NVIDIA->AMD->NVIDIA, so that they stay on the gpu and get displayed.
 - Sometimes /usr/lib/org_kde_powerdevil binds to an I2C-Bus of the Card (Namely Monitor IO), thereby preventing driver unload (frustrating because lsof /dev/nvidia0 and nvidia-smi is empty, but nvidia still says 1 usage). Either kill it, or unbind from i2c somehow. Restart it afterwards with kstart5 /usr/lib/org_kde_powerdevil
