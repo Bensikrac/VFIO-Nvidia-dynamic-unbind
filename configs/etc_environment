@@ -4,3 +4,6 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+__GLX_VENDOR_LIBRARY_NAME=mesa
+VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
