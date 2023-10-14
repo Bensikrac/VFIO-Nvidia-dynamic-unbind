@@ -48,6 +48,12 @@ so you can leave everything open, that is not bound to the other gpu.
 - `modprobe nvidia nvidia_modeset nvidia_uvm` other nvidia stuff 
 - `echo -n "0000:01:00.1" > /sys/bus/pci/drivers/snd_hda_intel/bind` Rebind sound, may even be not needed
 
+## GPULoader script
+- Creates file with current envvars to load either with amd or nvidia depending on gpu conf
+- Apps load with AMD GPU as default if not loaded with gpuloader
+- Replace the paths in both files with your preffered location, but all three script files need to be in the same directory
+- Steam commandline is `full-path/gpuloader.sh %command%`
+
 ## Other Stuff
 - If you don't want stuff binding to /dev/nvidia0, you can set the __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json envvar in /etc/environment aswell, to exclude the nvidia EGL files, since it bypasses KWIN [Study this image carefully](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Wayland_display_server_protocol.svg/1024px-Wayland_display_server_protocol.svg.png). Just don't forget setting it to the nvidia file, in case of games. 
 - You might need to include VBIOS in libvirt. Dumping on linux was broken, so I pulled the image using GPU-Z. If you do that, you need to remove the nvflash header: https://www.youtube.com/watch?v=FWn6OCWl63o
