@@ -19,7 +19,7 @@ so you can leave everything open, that is not bound to the other gpu.
 - AMDGPU driver
 
 ## The configuration (ISOLATE FIRST)
-- **Preffered method**
+- **Preferred method**
 - Quirk: You will get mmap issues if nvidia driver is bound first, mitigation: start a dummy vm and kill it immediately, only then attach it to the system using some kind of service.
 - Isolate the NVIDIA card and bind it to vfio_pci, as if you would do normal VFIO. I bound the audio dev aswell, no test without binding it.
 - Check that [Kernel Mode Setting](https://wiki.archlinux.org/title/kernel_mode_setting) is enabled for the AMD gpu. If it is enabled, a device file should be under /dev/dri/card0. The /etc/mkinitcpio.conf and modprobe.d files will be provided. (Don't forget to remake initramfs with `mkinitcpio -P`). **Also replace PCI-Ids with your GPU-Ids**
