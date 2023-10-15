@@ -67,7 +67,7 @@ so you can leave everything open, that is not bound to the other gpu.
 
 ## OpenGL stuff
 - OpenGL needs to have [PRIME](https://wiki.archlinux.org/title/PRIME#Configure_applications_to_render_using_GPU) to be enabled, to render on NVIDIA gpu, else it will stay on amd
-- my testing only `__GLX_VENDOR_LIBRARY_NAME=nvidia` is needed
+- my testing only `__GLX_VENDOR_LIBRARY_NAME=nvidia` is needed, envvar is going to libglvnd. __EGL_VENDOR_LIBRARY_FILENAMES also goes to libglvnd.
 
 ## Questions etc:
 I currently have a working config, but I'm sure I missed something, so if you have any questions, just open an Issue / PR on github. Or discord handle is same as github name.
