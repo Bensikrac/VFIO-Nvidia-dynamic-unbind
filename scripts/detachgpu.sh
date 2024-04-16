@@ -18,5 +18,5 @@ modprobe vfio_pci_core vfio_iommu_type1 vfio
 #setup currentenv for gpuloder script
 echo -n "__GLX_VENDOR_LIBRARY_NAME=mesa
 __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json" > $HOME/configs/scripts/gpuscript/currentenv
+VK_DRIVER_FILES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json" > $HOME/configs/scripts/gpuscript/currentenv
 #replace above with your preffered path
