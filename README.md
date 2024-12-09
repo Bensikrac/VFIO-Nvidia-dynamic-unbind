@@ -1,11 +1,11 @@
-# VFIO with IGPU(AMD) and NVIDIA GPU (RTX 3070TI) and dynamic unbinding and rebinding
+# VFIO with IGPU(INTEL) and AMD GPU (RC 580) and dynamic unbinding and rebinding
 ## Whats all about
 This is my way of dynamically switching the NVIDIA GPU between the VM and HOST, **without needing to restart desktop environment**, and also using the Display out of the card
 ## My current setup
 - Arch Linux
 - KDE Plasma with Kwin compositor (Wayland).
 - SDDM Display manager (Needs to support Wayland as backend)
-- NVIDIA Proprietary driver
+- INTEL intergrated graphics
 - AMDGPU driver
 
 ## Who is this for
