@@ -1,4 +1,5 @@
 #!/bin/bash
+# Place this and all the .sh files in $HOME/.config/scripts/gpuswitch
 ## Source for my Arrays and my functions for the GPU card.
 IOMMU_GROUP=15 ## This is specific to my setup. Please check your own!!
 # Get the devices, their ID values and the Drivers of the IOMMU group

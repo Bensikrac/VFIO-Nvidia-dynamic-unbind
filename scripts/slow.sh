@@ -1,7 +1,5 @@
 #!/bin/bash
-
-source $PWD/source_array_functions.sh
-
+source $HOME/.config/scripts/gpuswitch/source_array_functions.sh
 ## These are the usual results for my current setup.
 # gpu=0000:02:00.0
 # aud=0000:02:00.1
@@ -25,11 +23,11 @@ if [ ${#DRIVERS[@]} -gt 0 ]; then
         if [ ${#unique_drivers[@]} -eq 1 ]; then
             echo "Multiple drivers found, but they are the same, performing action for same drivers"
             # Perform action for same drivers
-            ./amdgpu_snd_hda_intel_add_new_id.sh
+            bash $HOME/.config/scripts/gpuswitch/amdgpu_snd_hda_intel_add_new_id.sh
         else
             echo "Multiple drivers found, and they are different, performing action for different drivers"
             # Perform action for different drivers
-            ./vfio_add_new_id.sh
+            bash $HOME/.config/scripts/gpuswitch/vfio_add_new_id.sh
         fi
     fi
 fi

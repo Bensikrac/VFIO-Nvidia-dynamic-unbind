@@ -1,0 +1,3 @@
+# GRUB boot loader configuration
+# Uncomment to enable GPU passthrough, REMEMBER TO ATTACH HDMI internal
+GRUB_CMDLINE_LINUX+=" intel_iommu=on iommu=pt" #vfio-pci.ids=1002:67df,1002:aaf0

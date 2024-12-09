@@ -2,7 +2,7 @@
 ## Detaches the GPU from from system, and Rescans to Re-Attach to AMDGPU Drivers
 ## bind to original driver after vm shutdown:
 ## bind / unbind card to and from VFIO-PCI to AMDGPU
-source $PWD/source_array_functions.sh
+source $HOME/.config/scripts/gpuswitch/source_array_functions.sh
 ## Removes the IDs to the AMDGPU and SND_HDA_INTEL driver
 ## There may be a chance that this is needed for multi GPU set ups
 ## Or if you use nVIDIA drivers. but with my tests they were 
