@@ -1,3 +1,5 @@
+# If you have performance issues use following kwin_wayland patch to run a gamescope-like second instance:
+https://github.com/Bensikrac/kwin_nested_drm
 # VFIO with IGPU(AMD) and NVIDIA GPU (RTX 3070TI) and dynamic unbinding and rebinding
 ## Whats all about
 This is my way of dynamically switching the NVIDIA GPU between the VM and HOST, **without needing to restart desktop environment**, and also using the Display out of the card
