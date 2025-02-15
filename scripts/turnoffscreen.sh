@@ -1,1 +1,1 @@
-echo -n "remove" > /sys/bus/pci/devices/0000:01:00.0/drm/card1/uevent
+udevadm trigger --action=remove /dev/dri/card1

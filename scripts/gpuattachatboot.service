@@ -5,6 +5,6 @@ Description=Attach GPU after boot
 Type=simple
 User=root
 RemainAfterExit=true
-ExecStart=$HOME/configs/scripts/gpuscript/firstbootattach.sh
+ExecStart=/usr/local/sbin/attachgpu.sh
 [Install]
 WantedBy=multi-user.target
