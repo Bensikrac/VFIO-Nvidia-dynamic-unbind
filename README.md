@@ -114,7 +114,9 @@ I currently have a working config, but I'm sure I missed something, so if you ha
    - reload systemd daemons and enable service `sudo systemctl daemon-reload` `sudo systemctl enable gpuattachboot.service`
 
 6. (Optional libvirt hook)
+
    - `/etc/libvirt/hooks/qemu` contains hooks that get executed on vm state change. To automatically unbind the gpu on the vm start and stop add the following lines to the file:
+
    ```
    if [ "$command" = "prepare" ]; then
        /usr/local/sbin/detachgpu.sh
@@ -123,6 +125,8 @@ I currently have a working config, but I'm sure I missed something, so if you ha
         /usr/local/sbin/attachgpu.sh
    fi
    ```
+
+7. Do not forget to reboot
 
 # Usage:
 
