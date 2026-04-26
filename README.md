@@ -93,7 +93,7 @@ I currently have a working config, but I'm sure I missed something, so if you ha
 2. Install scripts to `/usr/local/sbin`
    - copy attachgpu.sh, detachgpu.sh and gpuloader.sh to `/usr/local/sbin` with `sudo cp scripts/attachgpu.sh scripts/detachgpu.sh scripts/gpuloader.sh /usr/local/sbin`
    - make the scripts executable `sudo chmod +x /usr/local/sbin/attachgpu.sh /usr/local/sbin/detachgpu.sh /usr/local/sbin/gpuloader.sh`
-   - inside detachgpu.sh replace the pcie vendor and device id with the correct one for your card, `lspci -nn | grep -i nvidia`. id is the thing in the square brackets like `\[10de:2482\]`. Change this line: modprobe vfio_pci ids=10de:2482,10de:228b. The 2 IDs should be the NVIDIA GPU and associated audio device
+   - inside detachgpu.sh replace the pcie vendor and device id with the correct one for your card, `lspci -nn | grep -i nvidia`. id is the thing in the square brackets like `[10de:2482]`. Change this line: modprobe vfio_pci ids=10de:2482,10de:228b. The 2 IDs should be the NVIDIA GPU and associated audio device
 3. (Optional libvirt hook)
 
    - `/etc/libvirt/hooks/qemu` contains hooks that get executed on vm state change. To automatically unbind the gpu on the vm start and stop add the following lines to the file:
