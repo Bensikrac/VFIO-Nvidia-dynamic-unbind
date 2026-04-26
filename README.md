@@ -88,10 +88,12 @@ I currently have a working config, but I'm sure I missed something, so if you ha
 
 1. Set up `/etc/environment`
    - paste contents from configs/etc_environment into your `/etc/environment` (use your preferred text editor with sudo)
+   - check if /dev/dri/card0 is your AMD gpu by looking at `ls -la /dev/dri/by-path` and comparing the id shown for ../card0 with the id of the AMD gpu from `lspci | grep VGA`. If not flip the order. If card0 is missing, then use respective card ids show in `ls -la /dev/dri/by-path` with the constraint that the AMD gpu should be first.
 
 2. Install scripts to `/usr/local/sbin`
    - copy attachgpu.sh, detachgpu.sh and gpuloader.sh to `/usr/local/sbin` with `sudo cp scripts/attachgpu.sh scripts/detachgpu.sh scripts/gpuloader.sh /usr/local/sbin`
    - make the scripts executable `sudo chmod +x /usr/local/sbin/attachgpu.sh /usr/local/sbin/detachgpu.sh /usr/local/sbin/gpuloader.sh`
+   - inside detachgpu.sh replace the pcie vendor and device id with the correct one for your card, `lspci -nn | grep -i nvidia`. id is the thing in the square brackets like `\[10de:2482\]`. Change this line: modprobe vfio_pci ids=10de:2482,10de:228b. The 2 IDs should be the NVIDIA GPU and associated audio device
 3. (Optional libvirt hook)
 
    - `/etc/libvirt/hooks/qemu` contains hooks that get executed on vm state change. To automatically unbind the gpu on the vm start and stop add the following lines to the file:
